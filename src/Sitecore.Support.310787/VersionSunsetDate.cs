@@ -36,7 +36,7 @@
 
     public DateTime GetSunset(bool currentVersionIsLatest, DateTime currentVersionValidTo, DateTime nextVersionSunrise)
     {
-      if (currentVersionIsLatest)
+      if (currentVersionIsLatest && (currentVersionValidTo == DateTime.MaxValue || currentVersionValidTo == DateTime.MinValue))
       {
         return DateTime.MaxValue;
       }
